@@ -1,0 +1,11 @@
+progress-bar[animated] {
+    transition: height 0.66s ease-out;
+
+    .buffer-bar {
+        transition: width 2s;
+    }
+
+    .load-bar {
+        transition: width 2s;
+    }
+}

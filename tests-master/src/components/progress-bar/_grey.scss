@@ -1,0 +1,9 @@
+progress-bar[motif="grey"] {
+    .buffer-bar {
+        background-color: lighten($gray-darker, 30%);
+    }
+
+    .load-bar {
+        background-color: $gray-darker;
+    }
+}

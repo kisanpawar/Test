@@ -1,0 +1,44 @@
+/*
+ * These variables are available to all components globally and are thus designated with an "eds-" prefix.
+ * Components may implement these and pass-through to a local variable name.
+ */
+
+// Color palette
+$blue-darkest:  #163c6f;
+$blue-dark:     #1d4f91;
+$blue:          #426da9;
+$purple:        #6d2077;
+$raspberry:     #af1685;
+$magenta:       #e63888;
+$red:           #e4002b;
+$orange:        #ff8f1c;
+$yellow:        #fedb00;
+$lime:          #b7bf10;
+$green:         #009F4D;
+$teal:          #00b2a9;
+$sapphire:      #0081a6;
+
+$black:         #333333;
+$white:         #ffffff;
+$gray:          #f6f6f6;
+$gray-dark:     #dcdcdc;
+$gray-darker:   #888888;
+
+// States
+$error-light:   #ffdce2;
+$error:         $red;
+$success-light: #cdf4d2;
+$success:       #007A3B;
+$info-light:    #d2e8f9;
+$info:          $blue;
+$warning-light: #fceeba;
+$warning:       #b35900;
+
+$hover-blue:      #e0effb;
+$selected-purple: #f5e3f8;
+
+// Borders
+$border-color-dark:   #cccccc;
+$border-color:        #d8d8d8;
+$border-color-light:  #e6e6e6;
+$border-focus-color:  $blue;

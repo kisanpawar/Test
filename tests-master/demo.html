@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>software-ui-saas-eds - light header</title>
+    <link rel="stylesheet" href="demo.css">
+    <script src="demo.js"></script>
+    <script src="dist/index-all.js"></script>
+</head>
+
+<body>
+  
+
+    <div class="form-test">
+        <dynamic-form isAdmin="false" />
+        <dynamic-form isAdmin="true" />
+        <script>
+            const fields = JSON.stringify({
+                groups: [
+                    [1, 2],
+                    [3, 4, 5],
+                    6
+                ],
+                items: [
+                    {id: 1, fieldName: 'first name', type: 'textfield', size: 100},
+                    {id: 4, fieldName: 'city', type: 'textfield', size: 150},
+                    {id: 6, fieldName: 'comment', type: 'textarea', size: 150, height: 150},
+                    {id: 5, fieldName: 'postcode', type: 'textfield', size: 150},
+                    {id: 3, fieldName: 'street', type: 'textfield', size: 150},
+                    {id: 2, fieldName: 'surname', type: 'textfield', size: 100},
+                    {id: 2, fieldName: 'surname', type: 'textfield', size: 100},
+                    {id: 7, fieldName: 'admin name', type: 'textfield', size: 100},
+                ]
+            });
+            document.querySelector('dynamic-form[isAdmin="false"]').setAttribute('fields', fields);
+            document.querySelector('dynamic-form[isAdmin="true"]').setAttribute('fields', fields);
+        </script>
+    </div>
+</body>
+
+
+
+</html>

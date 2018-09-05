@@ -1,0 +1,77 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "Test Web Components",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prebabel:e2e": "npm run clean:e2e:specs && npm run build:dev",
+    "babel:e2e": "babel src --out-dir e2e/specs --only .spec.js,test-util.js --source-maps",
+    "build:base": "npm run clean && webpack --config webpack.config.js --profile --bail",
+    "build:dev": "npm run build:base -- --mode=development",
+    "build:prod": "npm run clean && webpack --config webpack.prod.js",
+    "clean": "rimraf -- dist e2e",
+    "clean:e2e:specs": "rimraf -- e2e/specs",
+    "e2e": "npm run babel:e2e && npm run wdio",
+    "e2e:debug": "DEBUG_WDIO=true npm run e2e",
+    "eslint": "eslint *.js src",
+    "eslint:fix": "npm run eslint -- --fix",
+    "git:hooks:local": "test -d .git && copyfiles -f scripts/git/hooks/* .git/hooks || echo",
+    "postgit:hooks:local": "test -d .git/hooks && chmod +x .git/hooks/* || echo",
+    "lint": "npm run markdownlint && npm run eslint",
+    "postinstall": "npm run git:hooks:local",
+    "prepublishOnly": "npm test",
+    "publish": "npm run build:prod",
+    "markdownlint": "markdownlint *.md",
+    "serve": "webpack-dev-server",
+    "test": "npm run lint && npm run build:dev",
+    "preversion": "npm test",
+    "version": "npm run build:prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "8.6.0"
+  },
+  "author": "Vaughn",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "popper.js": "^1.14.4"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^1.1.1",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.6.1",
+    "chai": "4.1.2",
+    "copy-webpack-plugin": "^4.5.2",
+    "copyfiles": "2.0.0",
+    "debug": "3.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "11.0.0",
+    "eslint-loader": "2.0.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.7.0",
+    "eslint-plugin-standard": "3.1.0",
+    "express": "4.16.3",
+    "markdownlint-cli": "0.8.1",
+    "mocha": "5.1.1",
+    "morgan": "1.9.0",
+    "node-sass": "4.9.0",
+    "nodemon": "1.17.4",
+    "raw-loader": "0.5.1",
+    "rimraf": "2.6.2",
+    "sass-loader": "7.0.1",
+    "uglifyjs-webpack-plugin": "1.2.5",
+    "webpack": "4.6.0",
+    "webpack-cli": "2.1.2",
+    "webpack-dev-server": "3.1.4",
+    "webpack-merge": "4.1.2"
+  }
+}

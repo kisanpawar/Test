@@ -1,0 +1,9 @@
+progress-bar[motif="purple"] {
+    .buffer-bar {
+        background-color: lighten($magenta, 30%);
+    }
+
+    .load-bar {
+        background-color: $purple;
+    }
+}

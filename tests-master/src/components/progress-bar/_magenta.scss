@@ -1,0 +1,9 @@
+progress-bar:not([motif]), progress-bar[motif="magenta"] {
+    .buffer-bar {
+        background-color: lighten($magenta, 30%);
+    }
+
+    .load-bar {
+        background-color: $magenta;
+    }
+}

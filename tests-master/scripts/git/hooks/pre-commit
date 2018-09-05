@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Running git local pre-commit hook..."
+set -ex
+
+npm test
